@@ -3,6 +3,11 @@ Options +FollowSymLinks +ExecCGI
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+# For testing setting the project env, uncomment next line.
+#  SetEnvIf Request_URI ".*" PROJECT_ENV=prod
+
+  SetEnvIf Host prod\..* PROJECT_ENV=prod
+  
   # uncomment the following line, if you are having trouble
   # getting no_script_name to work
   #RewriteBase /
@@ -18,5 +23,15 @@ Options +FollowSymLinks +ExecCGI
   RewriteCond %{REQUEST_FILENAME} !-f
 
   # no, so we redirect to our front web controller
+
+  # Below we define conditional rules that will go controller based on env
+  # The default will be dev.
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{ENV:PROJECT_ENV} =prod [NC]
   RewriteRule ^(.*)$ index.php [QSA,L]
+
+  #RewriteCond %{ENV:PROJECT_ENV} =dev [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ frontend_dev.php [QSA,L]
 </IfModule>
