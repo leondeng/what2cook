@@ -1,0 +1,45 @@
+Fridge:
+  columns:
+    name: text
+    brand: varchar(255)
+    capacity: integer(4)
+
+FridgeItem:
+  columns:
+    name: text
+    amount: integer(4)
+    unit:
+      type: enum
+      values: [of, grams, ml, slices]
+    useby: timestamp
+    idFridge: integer
+  relations:
+    Fridge:
+      class: Fridge
+      local: idFridge
+      foreign: id
+      foreignAlias: Items
+
+Recipe:
+  columns:
+    name: text
+    preptime: integer(4) #prepare time in mins
+    cooktime: integer(4) #cook time in mins
+    readytime: integer(4) #ready time in mins
+    directions: text
+
+Ingredient:
+  columns:
+    name: text
+    amount: integer(4)
+    unit:
+      type: enum
+      values: [of, grams, ml, slices]
+    idRecipe: integer
+  relations:
+    Recipe:
+      class: Recipe
+      local: idRecipe
+      foreign: id
+      foreignAlias: Ingredients
+      onDelete: CASCADE
