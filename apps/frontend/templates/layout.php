@@ -3,12 +3,27 @@
   <head>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
-    <?php include_title() ?>
+    <?php echo content_tag('title', 'What to Cook - '.sfContext::getInstance()->getResponse()->getTitle()); ?>
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
   </head>
   <body>
-    <?php echo $sf_content ?>
+    <!-- <div id="Background"></div>
+    <div class="clear"></div>
+    <div id="HeaderBand"></div> -->
+    <div id="Wrapper">
+      <div id="Header">
+        <?php include_partial('global/header'); ?>
+      </div>
+      <div class="clear"></div>
+      <div id="FlashMessages">
+        <?php include_partial('global/flashMessages'); ?>
+      </div>
+      <div id="PageContent">
+        <?php echo $sf_content ?>
+      </div>
+    </div>
+    <?php include_partial('global/footer'); ?>
   </body>
 </html>

@@ -1,0 +1,363 @@
+/* form generic */
+form .box {
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: transparent;
+	background-image: -moz-linear-gradient(center top, #D5E8F4, #5DA5D4);
+	background: -webkit-gradient(linear, center top, center bottom, from(#D5E8F4),
+		to(#5DA5D4) );
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D5E8F4',
+		endColorstr='#5DA5D4' );
+	background-origin: padding-box;
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: auto auto;
+	border: 1px solid #142652;
+	border-radius: 25px 25px 25px 25px;
+	float: left;
+	opacity: 0.8;
+	padding: 5px;
+	color: #00217E;
+}
+
+form .box .title {
+	padding-left: 150px;
+	margin: -10px -5px 0 -5px;
+	border-bottom: 1px solid #142652;
+	height: 40px;
+}
+
+form .box .inner {
+	padding: 20px 0 0 150px;
+}
+
+form .box input[type="text"],form .box input[type="password"],form .box select {
+	border: 1px solid #142652;
+	width: 200px;
+	height: 22px;
+}
+
+form .box input[type="file"] {
+	/* border: 1px solid #142652; */
+	width: 220px;
+	height: 22px;
+}
+
+form .buttons {
+	padding: 20px 0 0 100px;
+}
+
+form .buttons .button_item {
+	float: left;
+	padding: 5px 25px 5px 0;
+}
+
+form .box .button {
+	background-color: #00217E;
+	border: 1px solid #FFFFFF;
+	border-radius: 10px 10px 10px 10px;
+	color: #FFFFFF;
+	height: 30px;
+	width: 90px;
+	font-family: san-serif, helvetica, verdana, arial;
+	font-size: 17px;
+	text-align: center;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+form .error_list {
+	color: red;
+	font-size: 10px;
+	list-style: none;
+	display: inline;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+form .row {
+	margin-top: 20px;
+}
+
+form .column {
+	width: 47%;
+	float: left;
+}
+
+form .field .control {
+	float: left;
+}
+
+form .field .error_list {
+	float: left;
+	padding-left: 0;
+}
+
+form .terms {
+	font-size: 11px;
+	float: left;
+}
+
+form .terms a {
+	border-bottom: 1px dotted;
+}
+
+form .auto-hint {
+	color: #AAAAAA;
+}
+
+div.ui-datepicker {
+	font-size: 12px;
+}
+
+/* form login */
+form .login {
+	width: 37%;
+	min-height: 250px;
+	margin: 76px 0 0 220px;
+}
+
+form .box .title_login {
+	padding: 5px 0 0 20px;
+	margin: 0 -5px 0 -5px;
+	border-bottom: 1px solid #142652;
+	height: 30px;
+}
+
+form .box .inner_login {
+	padding: 10px 0 0 15px;
+}
+
+/* form .box .inner_login input[type="text"],input[type="password"] {
+	width: 320px;
+} */
+
+form .img_login {
+	width: 244px;
+	height: 320px;
+	position: absolute;
+	margin: 17px 0 0 550px;
+	z-index: -100;
+}
+
+form .img_bottom {
+	width: 213px;
+	height: 320px;
+	position: absolute;
+	margin: 17px 0 0 550px;
+	border-bottom: 1px solid #142652;
+}
+
+form .box .button_login {
+	margin: 15px 0 0 230px;
+}
+
+form .links_login {
+	padding: 5px 0 0 15px;
+}
+
+/* form register*/
+form .register {
+	width: 37%;
+	min-height: 250px;
+	margin: 20px 0 30px 220px;
+	padding-bottom: 28px;
+}
+
+form .register a {
+	border-bottom: 1px dotted;
+}
+
+form .register .row {
+	margin-top: 15px;
+}
+
+form .img_register {
+	width: 314px;
+	height: 440px;
+	position: absolute;
+	margin: -20px 0 0 480px;
+	z-index: -100;
+	border-bottom: 1px solid #142652;
+}
+
+/* form search */
+form .search {
+	width: 80%;
+	height: 300px;
+	margin: 40px 0 0 100px;
+    z-index: -100;
+}
+
+/* form instructor*/
+form .box .button_right {
+	margin: 140px 0 0 300px;
+}
+
+form .img_left {
+	width: 173px;
+	height: 420px;
+	position: absolute;
+	left: 0;
+	margin-top: -35px;
+	padding-left: 50px;
+	display: block;
+}
+
+form .img_profile {
+	padding-left: 20px;
+}
+
+/* form dojang*/
+form .dojang {
+	margin-top: 80px !important;
+}
+
+form .box .title_dojang {
+	padding-left: 50px;
+	margin: -10px -5px 0 -5px;
+	border-bottom: 1px solid #142652;
+	height: 40px;
+}
+
+form .box .inner_dojang {
+	padding: 10px 0 0 50px;
+}
+
+form .box .button_left {
+	margin: 160px 0 0 50px;
+}
+
+form .img_right {
+	width: 182px;
+	height: 350px;
+	position: absolute;
+	margin: 17px 0 0 750px;
+	display: block;
+}
+
+/* form edit*/
+form .edit {
+	width: 75%;
+	height: 480px;
+	margin: 5px 0 30px 100px;
+    z-index: -100;
+}
+
+form .edit .title {
+	padding: 2px 0 0 45px;
+	margin: 0 -5px 0;
+	border-bottom: 1px solid #142652;
+	height: 25px;
+}
+
+form .edit .row {
+	margin-top: 5px;
+}
+
+form .edit .inner {
+	font-size: 12px;
+	padding: 10px 0 0 40px;
+}
+
+form .edit input[type="text"],form .edit select {
+	width: 235px;
+	height: 20px;
+}
+
+form .edit textarea {
+    border: 1px solid #142652;
+	width: 310px;
+	height: 310px;
+	font-size: 10px;
+}
+
+form .edit .column {
+	width: 42%;
+}
+
+form .edit .buttons {
+	padding: 10px 0 0 60px;
+}
+
+form .edit .terms {
+	margin: 10px 0 0;
+}
+
+form .img_edit {
+	width: 182px;
+	height: 350px;
+	position: absolute;
+	margin: -27px 0 0 710px;
+	display: block;
+}
+
+/* form profile*/
+form .img_profile {
+	padding-left: 40px;
+	margin-top: -40px;
+}
+
+form .profile {
+	width: 80%;
+	/* height: 460px; */
+	margin: 5px 0 30px 100px;
+	padding-bottom: 30px;
+    z-index: -100;
+}
+
+form .profile .title {
+	padding: 5px 0 0 150px;
+	margin: 0 -5px;
+	height: 30px;
+}
+
+form .profile .title .row {
+	float: left;
+	margin: 0;
+	height: 25px;
+}
+
+form .profile .title .row .control {
+	width: 100%;
+}
+
+form .profile .title .row ul {
+	margin: 0 0 0 -15px;
+}
+
+form .profile .title .row li {
+	float: left;
+	display: inline;
+	list-style: none outside none;
+	padding-right: 20px;
+}
+
+form .profile .inner {
+	margin: 0;
+	padding-top: 10px;
+}
+
+form .profile .inner .row {
+	margin-top: 10px;
+}
+
+form .profile .inner input[type="text"],form .profile .inner select {
+	width: 210px;
+}
+
+form .profile .inner textarea {
+	border: 1px solid #142652;
+	width: 210px;
+	height: 140px;
+	font-size: 11px;
+}
+
+form .profile .terms {
+	margin: 10px 0 0 5px;
+	font-size: 13px;
+}
+
+form .profile .buttons {
+	padding: 10px 0 0 150px;
+}

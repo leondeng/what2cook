@@ -12,4 +12,7 @@ require_once dirname(__FILE__).'/../lib/BasesearchRecipeActions.class.php';
  */
 class searchRecipeActions extends BasesearchRecipeActions
 {
+	public function executeIndex(sfWebRequest $request) {
+		$this->getResponse()->setTitle('HomePage');
+	}
 }
