@@ -27,7 +27,7 @@ class searchRecipeActions extends BasesearchRecipeActions
 
         $this->found = $fridge->searchRecipe($fileRecipe->getTempName());
       } else {
-        $this->getUser()->setFlash('error', 'The files uploaded invalid!');
+        $this->getUser()->setFlash('error', 'Invalid or empty file!');
       }
     }
 
