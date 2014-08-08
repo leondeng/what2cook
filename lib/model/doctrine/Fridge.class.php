@@ -12,4 +12,84 @@
  */
 class Fridge extends BaseFridge
 {
+  private $recipes = array();
+
+  public function loadItems(array $items) {
+    foreach ($items as $item) {
+      $fridgeItem = new FridgeItem();
+      $fridgeItem->initialize($item);
+      $this->Items[] = $fridgeItem;
+    }
+  }
+
+  public function loadItemsFromFile($filename) {
+    $items = array();
+    if (($handle = fopen($filename, 'r')) !== FALSE) {
+      while (($row = fgetcsv($handle, 1000, ',')) !== FALSE) 	{
+        $items[] = $row;
+      }
+      fclose($handle);
+    }
+    $this->loadItems($items);
+  }
+
+  public function initRecipes($filename) {
+    if (($handle = fopen($filename, 'r')) !== FALSE) {
+      $content = fread($handle, filesize($filename));
+      fclose($handle);
+
+      $values = json_decode($content, TRUE);
+      foreach ($values as $value) {
+        $recipe = new Recipe();
+        $recipe->setName($value['name']);
+        $recipe->loadIngredients($value['ingredients']);
+
+        $this->recipes[] = $recipe;
+      }
+    }
+  }
+
+  /*
+   * Fridge::findIngredient()
+  * Desc: search Fridge items for given ingredient name, amount and unit
+  * Para: ingredient name, amount and unit
+  * Return: a date string when hit, stands for useBy of hit item; false if miss or hit item unacceptable
+  */
+  public function findIngredient($name, $amount, $unit) {
+    foreach ($this->Items as $item) {
+      if ($item->getName() != $name) continue;
+      if ($item->getAmount() < $amount) continue;
+      if ($item->getUnit() != $unit) continue;
+      if ($item->isExpired()) continue;
+
+      return $item->getUseBy();
+    }
+    return false;
+  }
+
+  public function searchRecipe($recipefile) {
+    $found = false;
+    $recipe_ts = 0;
+
+    $this->initRecipes($recipefile);
+
+    foreach ($this->recipes as $recipe) {
+      $ts = 0;
+      foreach ($recipe->getIngredients() as $ingredient) {
+        $useby = $this->findIngredient($ingredient->getName(), $ingredient->getAmount(), $ingredient->getUnit());
+        if (!$useby) continue 2; //once one ingredient not found, try next recipe
+
+        list($d, $m, $y) = explode('/', $useby);
+        $_ts = strtotime(sprintf('%d-%d-%d', $y, $m, $d));
+        if (!$ts || $_ts < $ts) $ts = $_ts; //get closer use-by timestamp
+      }
+
+      if (!$recipe_ts || $ts < $recipe_ts) {
+        $recipe_ts = $ts;
+        $found = $recipe;
+      }
+    }
+
+    return $found;
+  }
 }

@@ -12,4 +12,13 @@
  */
 class Ingredient extends BaseIngredient
 {
+  public function initialize($values) {
+    $this->setName($values['item']);
+    $this->setAmount($values['amount']);
+    $this->setUnit($values['unit']);
+  }
+
+  public function __toString() {
+    return sprintf("\t\tItem: %s, Amount: %d, Unit: %s\n", $this->getName(), $this->getAmount(), $this->getUnit());
+  }
 }

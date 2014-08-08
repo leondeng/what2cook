@@ -12,4 +12,16 @@
  */
 class FridgeItem extends BaseFridgeItem
 {
+  public function initialize(array $values) {
+    $this->setName($values[0]);
+    $this->setAmount($values[1]);
+    $this->setUnit($values[2]);
+    $this->setUseBy($values[3]);
+  }
+
+  public function isExpired() {
+    list($d, $m, $y) = explode('/', $this->getUseBy());
+
+    return strtotime(sprintf('%d-%d-%d', $y, $m, $d)) < time();
+  }
 }
