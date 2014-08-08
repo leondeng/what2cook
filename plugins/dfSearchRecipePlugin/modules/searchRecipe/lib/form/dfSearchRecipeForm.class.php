@@ -16,8 +16,8 @@ class dfSearchRecipeForm extends BaseForm
       )),
     ));
 
-    $this->widgetSchema->setLabel('fridge', 'Upload Fridge File in CSV Format');
-    $this->widgetSchema->setLabel('recipe', 'Upload Recipes in JSON Format');
+    $this->widgetSchema->setLabel('fridge', 'Fridge csv File: ');
+    $this->widgetSchema->setLabel('recipe', 'Recipes json File: ');
     
     $this->widgetSchema->setNameFormat('upload[%s]');
   }

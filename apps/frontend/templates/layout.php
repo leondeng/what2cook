@@ -3,7 +3,7 @@
   <head>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
-    <?php echo content_tag('title', 'What to Cook - '.sfContext::getInstance()->getResponse()->getTitle()); ?>
+    <?php echo content_tag('title', 'What2Cook - '.sfContext::getInstance()->getResponse()->getTitle()); ?>
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>

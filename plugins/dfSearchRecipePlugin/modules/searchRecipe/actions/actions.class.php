@@ -22,15 +22,10 @@ class searchRecipeActions extends BasesearchRecipeActions
         $fileFridge = $this->form->getValue('fridge');
         $fileRecipe = $this->form->getValue('recipe');
 
-        $fridge = new Fridge();
+        $fridge = FridgeTable::getInstance()->findAll()->getFirst();
         $fridge->loadItemsFromFile($fileFridge->getTempName());
 
-        if(!$result = $fridge->searchRecipe($fileRecipe->getTempName())) {
-          $this->getUser()->setFlash('error', 'Sorry, no suitable recipe found. Go shopping?');
-        } else {
-          $this->getUser()->setFlash('success', 'Recipe found!');
-          echo $result;
-        }
+        $this->found = $fridge->searchRecipe($fileRecipe->getTempName());
       } else {
         $this->getUser()->setFlash('error', 'The files uploaded invalid!');
       }

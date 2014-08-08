@@ -17,18 +17,19 @@ form .box {
 	float: left;
 	opacity: 0.8;
 	padding: 5px;
+	margin-left: 120px;
 	color: #00217E;
 }
 
 form .box .title {
-	padding-left: 150px;
+	padding-left: 50px;
 	margin: -10px -5px 0 -5px;
 	border-bottom: 1px solid #142652;
 	height: 40px;
 }
 
 form .box .inner {
-	padding: 20px 0 0 150px;
+	padding: 20px 0 0 50px;
 }
 
 form .box input[type="text"],form .box input[type="password"],form .box select {
@@ -48,8 +49,8 @@ form .buttons {
 }
 
 form .buttons .button_item {
-	float: left;
-	padding: 5px 25px 5px 0;
+	float: right;
+	padding: 5px 55px 5px 0;
 }
 
 form .box .button {
@@ -58,7 +59,7 @@ form .box .button {
 	border-radius: 10px 10px 10px 10px;
 	color: #FFFFFF;
 	height: 30px;
-	width: 90px;
+	width: 120px;
 	font-family: san-serif, helvetica, verdana, arial;
 	font-size: 17px;
 	text-align: center;

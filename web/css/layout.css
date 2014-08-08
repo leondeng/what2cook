@@ -5,12 +5,16 @@ html,body {
 body {
 	background: url("../images/bg-body.png") repeat-x scroll center top
 		transparent;
-	font-family: san-serif, helvetica, verdana, arial;
+	font-family: Trocchi;
 }
 
 h1 {
-	color: #00217E;
-	letter-spacing: 3px;
+    color: #00217E;
+    letter-spacing: 2px;
+    font-size: 2.6667em;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 0.75em;
 }
 
 div#Wrapper {
@@ -25,19 +29,8 @@ div#Wrapper {
 #Header {
 	background: url("../images/bg-header.png") no-repeat scroll center top
 		transparent;
-	height: 228px;
+	height: 180px;
 	padding-top: 68px;
-}
-
-#HeaderBand {
-	visibility: hidden;
-	height: 47px;
-	position: absolute;
-	/* z-index: -1; */
-	left: 0;
-	right: 0;
-	width: 100%;
-	margin: 124px 0 0;
 }
 
 #PageContent {
@@ -67,6 +60,34 @@ div#Wrapper {
 		transparent;
 	font-family: san-serif, helvetica, verdana, arial;
 	margin: -70px 0 40px -60px;
+}
+
+#PageContent .recipe {
+    color: #00217e;
+    float: left;
+    margin: 20px 0 0 150px;
+}
+
+#PageContent .recipe_name {
+    font-family: Trocchi;
+    font-size: 1.6667em;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 0.75em;
+    text-decoration: underline;
+}
+
+#PageContent .ingredients_list h4 {
+    font-size: 1.66667em;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 0.75em;
+}
+
+#PageContent .ingredients_list p {
+    font-size: 1.33333em;
+    line-height: 1.4167;
+    margin-bottom: 1em;
 }
 
 #Footer {
@@ -156,174 +177,6 @@ div#Wrapper {
 
 .nobgimage,.nobg {
 	background-image: none !important;
-}
-
-.abig {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 14px;
-	font-weight: 800;
-}
-
-.abig40 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 40px;
-	font-weight: 800;
-}
-
-.abig38 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 38px;
-	font-weight: 800;
-}
-
-.abig36 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 36px;
-	font-weight: 800;
-}
-
-.abig34 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 34px;
-	font-weight: 800;
-}
-
-.abig32 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 32px;
-	font-weight: 800;
-}
-
-.abig30 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 30px;
-	font-weight: 800;
-}
-
-.abig28 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 28px;
-	font-weight: 800;
-}
-
-.abig26 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 26px;
-	font-weight: 800;
-}
-
-.abig24 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 24px;
-	font-weight: 800;
-}
-
-.abig22 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 22px;
-	font-weight: 800;
-}
-
-.abig20 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 20px;
-	font-weight: normal;
-}
-
-a .abig20 {
-	color: #00217E;
-}
-
-.abig18 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 18px;
-	font-weight: normal;
-}
-
-.abig16 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 16px;
-	font-weight: normal;
-}
-
-.abig14 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 14px;
-	font-weight: normal;
-}
-
-.abig12 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 12px;
-	font-weight: normal;
-}
-
-.abig10 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 10px;
-	font-weight: normal;
-}
-
-.abig8 {
-	color: #00217E;
-	font-family: "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold',
-		"Arial Black", "sans-serif";
-	font-size: 8px;
-	font-weight: normal;
-}
-
-a:link {
-	color: #00217E;
-	text-decoration: none;
-}
-
-a:visited {
-	color: #00217E;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #B8704D;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-a:active {
-	color: #0099FF;
 }
 
 #FlashMessages {

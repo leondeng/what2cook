@@ -7,4 +7,4 @@ all:
     param:
       dsn:      mysql:host=127.0.0.1;dbname=what2cook
       username: root
-      password: 
+      password: 123456

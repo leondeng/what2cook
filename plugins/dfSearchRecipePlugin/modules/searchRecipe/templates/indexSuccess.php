@@ -1,7 +1,7 @@
 <?php echo form_tag(url_for('@homepage'), 'multipart=true'); ?>
 <div class="box">
   <div class="title">
-    <h2>Please load fridge and submit recipes:</h2>
+    <h3>Please select files and click 'Search Now!' button.</h3>
   </div>
   <div class="inner">
     <?php echo $form; ?>
@@ -13,3 +13,19 @@
   </div>
 </div>
 </form>
+<?php
+if (isset($found)) {
+  if ($found) {
+    $recipe = $sf_data->getRaw('found');
+    include_partial('recipe', array('recipe' => $recipe));
+  } else {
+?>
+  <div class="recipe">
+    <div class="recipe_title">
+      <h2>So sorry, no suitable recipe found.</h2>
+    </div>
+  </div>
+<?php
+  }
+}
+?>
