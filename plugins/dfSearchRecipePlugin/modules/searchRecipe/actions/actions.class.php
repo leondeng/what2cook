@@ -26,7 +26,7 @@ class searchRecipeActions extends BasesearchRecipeActions
         $fridge->loadItemsFromFile($fileFridge->getTempName());
 
         if(!$this->found = $fridge->searchRecipe($fileRecipe->getTempName())) {
-          $this->getUser()->setFlash('error', 'So sorry, no suitable recipe found.');
+          $this->getUser()->setFlash('notice', 'So sorry, no suitable recipe found.');
         } else {
           $this->getUser()->setFlash('success', 'Congs! Recipe found!');
         }
