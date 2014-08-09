@@ -25,9 +25,13 @@ class searchRecipeActions extends BasesearchRecipeActions
         $fridge = FridgeTable::getInstance()->findAll()->getFirst();
         $fridge->loadItemsFromFile($fileFridge->getTempName());
 
-        $this->found = $fridge->searchRecipe($fileRecipe->getTempName());
+        if(!$this->found = $fridge->searchRecipe($fileRecipe->getTempName())) {
+          $this->getUser()->setFlash('error', 'So sorry, no suitable recipe found.');
+        } else {
+          $this->getUser()->setFlash('success', 'Congs! Recipe found!');
+        }
       } else {
-        $this->getUser()->setFlash('error', 'Invalid or empty file!');
+        $this->getUser()->setFlash('error', 'Invalid or empty file(s)!');
       }
     }
 

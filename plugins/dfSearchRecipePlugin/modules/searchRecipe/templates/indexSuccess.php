@@ -4,7 +4,7 @@
     <h3>Please select files and click 'Search Now!' button.</h3>
   </div>
   <div class="inner">
-    <?php echo $form; ?>
+    <?php echo $form->renderUsing('list'); ?>
   </div>
   <div class="buttons">
     <div class="button_item">
@@ -14,18 +14,8 @@
 </div>
 </form>
 <?php
-if (isset($found)) {
-  if ($found) {
-    $recipe = $sf_data->getRaw('found');
-    include_partial('recipe', array('recipe' => $recipe));
-  } else {
-?>
-  <div class="recipe">
-    <div class="recipe_title">
-      <h2>So sorry, no suitable recipe found.</h2>
-    </div>
-  </div>
-<?php
-  }
+if (isset($found) && $found) {
+  $recipe = $sf_data->getRaw('found');
+  include_partial('recipe', array('recipe' => $recipe));
 }
 ?>
