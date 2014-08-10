@@ -20,8 +20,4 @@ class Ingredient extends BaseIngredient
     $this->setAmount($values['amount']);
     $this->setUnit($values['unit']);
   }
-
-  public function __toString() {
-    return sprintf("\t\tItem: %s, Amount: %d, Unit: %s\n", $this->getName(), $this->getAmount(), $this->getUnit());
-  }
 }
