@@ -13,6 +13,9 @@
 class Ingredient extends BaseIngredient
 {
   public function initialize($values) {
+    if (count($values) != 3 || count(array_diff(array_keys($values), array('item', 'amount', 'unit'))))
+      throw new sfException('Invalid init values!');
+
     $this->setName($values['item']);
     $this->setAmount($values['amount']);
     $this->setUnit($values['unit']);

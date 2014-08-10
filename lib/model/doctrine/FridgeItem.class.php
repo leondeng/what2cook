@@ -13,6 +13,9 @@
 class FridgeItem extends BaseFridgeItem
 {
   public function initialize(array $values) {
+    if (count($values) != 4 || count(array_diff(array_keys($values), array(0, 1, 2, 3))))
+      throw new sfException('Invalid init values!');
+
     $this->setName($values[0]);
     $this->setAmount($values[1]);
     $this->setUnit($values[2]);

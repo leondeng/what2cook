@@ -19,13 +19,7 @@ class searchRecipeActions extends BasesearchRecipeActions
     if ($request->isMethod('post')) {
       $this->form->bind($request->getParameter('upload'), $request->getFiles('upload'));
       if ($this->form->isValid()) {
-        $fileFridge = $this->form->getValue('fridge');
-        $fileRecipe = $this->form->getValue('recipe');
-
-        $fridge = FridgeTable::getInstance()->findAll()->getFirst();
-        $fridge->loadItemsFromFile($fileFridge->getTempName());
-
-        if(!$this->found = $fridge->searchRecipe($fileRecipe->getTempName())) {
+        if(!$this->found = $this->form->searchRecipe()) {
           $this->getUser()->setFlash('notice', 'So sorry, no suitable recipe found.');
         } else {
           $this->getUser()->setFlash('success', 'Congs! Recipe found!');

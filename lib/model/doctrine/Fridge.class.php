@@ -33,22 +33,6 @@ class Fridge extends BaseFridge
     $this->loadItems($items);
   }
 
-  public function initRecipes($filename) {
-    if (($handle = fopen($filename, 'r')) !== FALSE) {
-      $content = fread($handle, filesize($filename));
-      fclose($handle);
-
-      $values = json_decode($content, TRUE);
-      foreach ($values as $value) {
-        $recipe = new Recipe();
-        $recipe->setName($value['name']);
-        $recipe->loadIngredients($value['ingredients']);
-
-        $this->recipes[] = $recipe;
-      }
-    }
-  }
-
   /*
    * Fridge::findIngredient()
   * Desc: search Fridge items for given ingredient name, amount and unit
@@ -67,13 +51,11 @@ class Fridge extends BaseFridge
     return false;
   }
 
-  public function searchRecipe($recipefile) {
+  public function searchRecipe(array $recipes = array()) {
     $found = false;
     $recipe_ts = 0;
 
-    $this->initRecipes($recipefile);
-
-    foreach ($this->recipes as $recipe) {
+    foreach ($recipes as $recipe) {
       $ts = 0;
       foreach ($recipe->getIngredients() as $ingredient) {
         $useby = $this->findIngredient($ingredient->getName(), $ingredient->getAmount(), $ingredient->getUnit());
