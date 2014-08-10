@@ -7,11 +7,20 @@
  * 
  * @package    what2cook
  * @subpackage model
- * @author     Your name here
+ * @author     Fan Deng
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 class FridgeItem extends BaseFridgeItem
 {
+  /**
+	* FridgeItem::initialize()
+	*
+	* init form array
+	*
+	* @param array $values
+	* @throws sfException
+	* @author Fan Deng
+	*/
   public function initialize(array $values) {
     if (count($values) != 4 || count(array_diff(array_keys($values), array(0, 1, 2, 3))))
       throw new sfException('Invalid init values!');
@@ -22,6 +31,14 @@ class FridgeItem extends BaseFridgeItem
     $this->setUseBy($values[3]);
   }
 
+  /**
+	* FridgeItem::isExpired()
+	*
+	* if item expired
+	*
+	* @return boolean
+	* @author Fan Deng
+	*/
   public function isExpired() {
     list($d, $m, $y) = explode('/', $this->getUseBy());
 

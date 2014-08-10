@@ -7,13 +7,21 @@
  * 
  * @package    what2cook
  * @subpackage model
- * @author     Your name here
+ * @author     Fan Deng
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 class Fridge extends BaseFridge
 {
   private $recipes = array();
 
+  /**
+	* Fridge::loadItems()
+	*
+	* load items form array
+	*
+	* @param array $items
+	* @author Fan Deng
+	*/
   public function loadItems(array $items) {
     foreach ($items as $item) {
       $fridgeItem = new FridgeItem();
@@ -22,6 +30,14 @@ class Fridge extends BaseFridge
     }
   }
 
+  /**
+	* Fridge::loadItemsFromFile()
+	*
+	* load items from csv file
+	*
+	* @param unknown $filename
+	* @author Fan Deng
+	*/
   public function loadItemsFromFile($filename) {
     $items = array();
     if (($handle = fopen($filename, 'r')) !== FALSE) {
@@ -33,12 +49,17 @@ class Fridge extends BaseFridge
     $this->loadItems($items);
   }
 
-  /*
-   * Fridge::findIngredient()
-  * Desc: search Fridge items for given ingredient name, amount and unit
-  * Para: ingredient name, amount and unit
-  * Return: a date string when hit, stands for useBy of hit item; false if miss or hit item unacceptable
-  */
+  /**
+	* Fridge::findIngredient()
+	*
+	* search Fridge items for given ingredient name, amount and unit
+	*
+	* @param unknown $name
+	* @param unknown $amount
+	* @param unknown $unit
+	* @return string or boolean, a date string of useBy of hit, or false if miss or item unacceptable
+	* @author Fan Deng
+	*/
   public function findIngredient($name, $amount, $unit) {
     foreach ($this->Items as $item) {
       if ($item->getName() != $name) continue;
@@ -51,6 +72,16 @@ class Fridge extends BaseFridge
     return false;
   }
 
+  /**
+	* Fridge::searchRecipe()
+	*
+	* search items for a match recipe
+	*
+	* @param array $recipes
+	* @throws sfException
+	* @return Ambigous <boolean, Recipe>
+	* @author Fan Deng
+	*/
   public function searchRecipe(array $recipes = array()) {
     $found = false;
     $recipe_ts = 0;

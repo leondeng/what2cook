@@ -7,11 +7,19 @@
  *
  * @package    what2cook
  * @subpackage model
- * @author     Your name here
+ * @author     Fan Deng
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 class Recipe extends BaseRecipe
 {
+  /**
+	* Recipe::loadIngredients()
+	*
+	* load ingredients from array values
+	*
+	* @param array $values
+	* @author Fan Deng
+	*/
   public function loadIngredients(array $values) {
     foreach($values as $value) {
       $ingredient = new Ingredient();
