@@ -42,14 +42,11 @@ div#Wrapper {
 	background: url("../images/404.png") no-repeat scroll right bottom
 		transparent;
 	font-family: san-serif, helvetica, verdana, arial;
-	margin: -70px 0 40px -60px;
+	margin-top: -70px;
+	padding-left: 160px;
 }
 
 #PageContent .term_404 {
-	position: relative;
-	top: 260px;
-	padding-left: 60px;
-	width: 320px;
 	font-weight: bold;
 	font-size: 20px;
 	color: #00217E;
@@ -59,7 +56,7 @@ div#Wrapper {
 	background: url("../images/500.png") no-repeat scroll right bottom
 		transparent;
 	font-family: san-serif, helvetica, verdana, arial;
-	margin: -70px 0 40px -60px;
+	margin-top: -70px;
 }
 
 #PageContent .recipe {

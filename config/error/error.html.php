@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<?php $path = sfConfig::get('sf_relative_url_root', preg_replace('#/[^/]+\.php5?$#', '', isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : (isset($_SERVER['ORIG_SCRIPT_NAME']) ? $_SERVER['ORIG_SCRIPT_NAME'] : ''))) ?>
+<?php $path = sfConfig::get('sf_relative_url_root', preg_replace('#/[^/]+\.php5?$#', '', isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : (isset($_SERVER['ORIG_SCRIPT_NAME']) ? $_SERVER['ORIG_SCRIPT_NAME'] : '')))?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -19,13 +19,17 @@
 		</div>
 		<div class="clear"></div>
 		<div id="PageContent">
-		    <div>
-			  <h1 class="hspace">Oops! Something unexpected has happened.</h1>
+			<div>
+				<h1 class="hspace">Oops! Something unexpected has happened.</h1>
+			</div>
+			<div class="term_404">
+				<p>
+					Go <a href="/">Homepage</a> for now.
+				</p>
 			</div>
 		</div>
 	</div>
-	<div id="Footer" class="tl">
-	</div>
+	<div id="Footer" class="tl"></div>
 
 </body>
 </html>
