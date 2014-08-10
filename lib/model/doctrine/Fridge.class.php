@@ -56,6 +56,9 @@ class Fridge extends BaseFridge
     $recipe_ts = 0;
 
     foreach ($recipes as $recipe) {
+      if (!$recipe instanceof Recipe)
+        throw new sfException('Invalid type, must search within Recipes!');
+
       $ts = 0;
       foreach ($recipe->getIngredients() as $ingredient) {
         $useby = $this->findIngredient($ingredient->getName(), $ingredient->getAmount(), $ingredient->getUnit());
