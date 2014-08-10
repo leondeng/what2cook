@@ -10,5 +10,6 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfDoctrinePlugin');
     $this->enablePlugins('sfTaskExtraPlugin');
     $this->enablePlugins('dfSearchRecipePlugin');
+    $this->enablePlugins('sfPHPUnit2Plugin');
   }
 }
